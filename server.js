@@ -1,12 +1,16 @@
 import config from './config';
-import express from 'express';
 //import fs from 'fs';
 import apiRouter from './api';
 
+import express from 'express';
 const server = express();
 
+server.set('view engine', 'ejs');
+
 server.get('/', (req, res) => {
-    res.send('Hello Express\n');
+    res.render('index', {
+      content: 'Hello Express & <em> EJS! </em>'
+    });
 });
 
 server.use(express.static('public'));
