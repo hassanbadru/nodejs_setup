@@ -3,13 +3,19 @@ import ReactDOM from 'react-dom';
 
 const color = Math.random() > 0.5 ? 'green' : 'red';
 
+const Header = () => {
+  return (
+    <h2 className = 'text-center'>
+        {props.headerMessage}
+    </h2>
+  );
+}
+
 const App = (props) => {
   return (
     <div>
-      <h2 className = 'text-center'>
-          {props.headerMessage}
-      </h2>
-      <div></div>
+      <Header />
+      <div>...</div>
     </div>
   );
 };
