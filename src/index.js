@@ -1,31 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const color = Math.random() > 0.5 ? 'green' : 'red';
-
-const Header = () => {
+const Header = ({message}) => {
   return (
-    <h2 className = 'text-center'>
-        {props.headerMessage}
+    <h2 className = 'Header text-center'>
+        {message}
     </h2>
   );
 }
 
-const App = (props) => {
+Header.propTypes = {
+  message: React.PropTypes.string
+};
+
+const App = () => {
   return (
-    <div>
-      <Header />
+    <div className = 'App'>
+      <Header message='Naming Contests'/>
       <div>...</div>
     </div>
   );
-};
-
-App.propTypes = {
-  headerMessage: React.PropTypes.string
-};
-
-App.defaultProps = {
-  headerMessage: 'Hello'
 };
 
 ReactDOM.render(
