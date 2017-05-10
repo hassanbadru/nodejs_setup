@@ -3,12 +3,23 @@ import ReactDOM from 'react-dom';
 
 const color = Math.random() > 0.5 ? 'green' : 'red';
 
-const App = () => {
+const App = (props) => {
   return (
-    <h2 className = 'text-center'>
-        Hello React Components!
-    </h2>
+    <div>
+      <h2 className = 'text-center'>
+          {props.headerMessage}
+      </h2>
+      <div></div>
+    </div>
   );
+};
+
+App.propTypes = {
+  headerMessage: React.PropTypes.string
+};
+
+App.defaultProps = {
+  headerMessage: 'Hello'
 };
 
 ReactDOM.render(
